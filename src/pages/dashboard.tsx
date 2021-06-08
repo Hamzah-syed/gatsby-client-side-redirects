@@ -4,7 +4,8 @@ import { navigate } from "gatsby"
 const Dashboard = () => {
   const [isAuheticated, setIsAuheticated] = useState<boolean>(false)
 
-  if (!isAuheticated) {
+  const browser = typeof window !== "undefined" && window
+  if (!isAuheticated && browser) {
     navigate("/")
     return (
       <>
